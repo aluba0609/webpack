@@ -1,4 +1,4 @@
-let {AsyncParallelBailHook}=require('tapable')
+let {AsyncParallelHook}=require('tapable')
 //异步的钩子（串行）。 并行 需要等待所有的并发的异步时间执行后在执行回调方法 
 //同时发送多个请求
 //执行方法分为 tap注册 tapAsync
@@ -6,7 +6,7 @@ class Lesson{
     constructor(){
         this.index=0;
         this.hooks={
-            arch:new AsyncParallelBailHook(['name'])
+            arch:new AsyncParallelHook(['name'])
         }
     }
     tap(){//注册监听函数

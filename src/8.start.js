@@ -1,28 +1,34 @@
-let {AsyncSeriesWaterfallHook} = require('tapable')
+let {
+    AsyncSeriesHook
+} = require('tapable')
 class Lesson {
     constructor() {
         this.index = 0;
         this.hooks = {
-            arch: new AsyncSeriesWaterfallHook(['name'])
+            arch: new AsyncSeriesHook(['name'])
         }
     }
     tap() { //注册监听函数
-        this.hooks.arch.tapAsync('node', (name,cb) => {
+        this.hooks.arch.tapPromise('node', (name) => {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     console.log('node', name)
-                    // cb('error','result') //会跳过下一个方法 直接打印end
-                    cb(null,'result')
+                    resolve()
                 }, 1000)
+            })
+
         })
-        this.hooks.arch.tapAsync('react', (name,cb) => {
+        this.hooks.arch.tapPromise('react', (name) => {
+            return new Promise((resolve, reject) => {
                 setTimeout(() => {
                     console.log('react', name)
-                    cb()
+                    resolve()
                 }, 1000)
+            })
         })
     }
     start() {
-        this.hooks.arch.callAsync('jw',()=>{
+        this.hooks.arch.promise('jw').then( () => {
             console.log('end')
         })
     }
