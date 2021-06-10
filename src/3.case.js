@@ -1,4 +1,4 @@
-class SyncWaterfallHook{//钩子是同步的
+class SyncWaterfallHook{
     constructor(args){//args=>['name']
         this.tasks=[]
     }

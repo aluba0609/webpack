@@ -1,11 +1,10 @@
 let {
     AsyncParallelHook
 } = require('tapable')
-//异步的钩子（串行）。 并行 需要等待所有的并发的异步时间执行后在执行回调方法 
-//同时发送多个请求
-//执行方法分为 tap注册 tapAsync
-//tspable库中有三种注册方式 tap 同步注册  tapAsync(cb) tapPromise(注册的是promise)
-//调用方法 call callAsync promise
+// AsyncParallelHook 异步并行钩子
+// 会并发执行两个异步的挂载函数，等两个都执行结束了，钩子函数执行自己的cb
+// AsyncParallelBailHook 异步并行条件钩子
+// 两个挂载的异步函数虽然是异步执行的，但是只要有一个callback 传入一个非undefined的值，钩子函数便会执行自己的callback，还没有执行完成的挂载还是会接着走，不会被停止
 class Lesson {
     constructor() {
         this.hooks = {

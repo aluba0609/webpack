@@ -1,4 +1,4 @@
-class AsyncSeriesWaterfallHook{//钩子是同步的
+class AsyncSeriesWaterfallHook{
     constructor(args){//args=>['name']
         this.tasks=[]
     }

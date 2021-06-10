@@ -1,4 +1,4 @@
-let {AsyncSeriesWaterfallHook} = require('tapable')
+let {AsyncSeriesWaterfallHook} = require('tapable')//AsyncSeriesWaterfallHook 异步串行瀑布钩子
 class Lesson {
     constructor() {
         this.hooks = {

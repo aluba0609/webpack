@@ -1,4 +1,4 @@
-class SyncHook{//钩子是同步的
+class SyncHook{
     constructor(args){//args=>['name']
         this.tasks=[]
     }

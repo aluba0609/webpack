@@ -1,4 +1,4 @@
-class AsyncSeriesHook{//钩子是同步的
+class AsyncSeriesHook{
     constructor(args){//args=>['name']
         this.tasks=[]
     }

@@ -1,4 +1,4 @@
-class SyncBailHook{//钩子是同步的
+class SyncBailHook{
     constructor(args){//args=>['name']
         this.tasks=[]
     }
@@ -16,7 +16,8 @@ class SyncBailHook{//钩子是同步的
 let hook = new SyncBailHook(['name'])
 hook.tap('react',function(name){
     console.log('react',name)
-    return '停止向下执行'
+    // return '停止向下执行'
+    return undefined
 })
 hook.tap('node',function(name){
     console.log('node',name)
