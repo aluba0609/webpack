@@ -7,20 +7,20 @@ module.exports={
         index:'./src/index.js'
     },
     output:{
-        filename:'[name].[hash].js',
+        filename:'[bundle].js',
         path:path.resolve(__dirname,'dist')
     },
-    module:{
-        rules:[
-            {
-                test:/\.js$/,
-                use:{
-                    loader:'babel-loader',
-                    preset:[
-                        '@babel/preset.env'
-                    ]
-                }
-            }
-        ]
-    }
+    // module:{
+    //     rules:[
+    //         {
+    //             test:/\.js$/,
+    //             use:{
+    //                 loader:'babel-loader',
+    //                 preset:[
+    //                     '@babel/preset.env'
+    //                 ]
+    //             }
+    //         }
+    //     ]
+    // }
 }
