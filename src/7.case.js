@@ -17,7 +17,6 @@ class AsyncSeriesHook{//钩子是同步的
     }
 }
 let hook = new AsyncSeriesHook(['name'])
-let total=0
 hook.tapAsync('react',function(name,cb){
         setTimeout(() => {
             console.log('react', name)

@@ -4,7 +4,6 @@ let {AsyncParallelHook}=require('tapable')
 //执行方法分为 tap注册 tapAsync
 class Lesson{
     constructor(){
-        this.index=0;
         this.hooks={
             arch:new AsyncParallelHook(['name'])
         }
@@ -32,4 +31,4 @@ class Lesson{
 
 let l=new Lesson()
 l.tap()//注册这两个时间
-l.start();//启动狗子
+l.start();//启动钩子

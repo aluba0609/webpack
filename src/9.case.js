@@ -22,7 +22,6 @@ class AsyncSeriesWaterfallHook{//钩子是同步的
     }
 }
 let hook = new AsyncSeriesWaterfallHook(['name'])
-let total=0
 hook.tapAsync('react',function(name,cb){
         setTimeout(() => {
             console.log('react', name)
