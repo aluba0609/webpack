@@ -15,12 +15,24 @@ class Compiler{
         let content = fs.readFileSync(modulePath,'utf8');
         return content
     }
+    //解析源码
+    parse(source,parentPath){
+        console.log(source,parentPath)
+    }
     buildModule(modulePath,isEntry){
         //拿到模块的内容
         let source= this.getSource(modulePath)
         //模块id modulePath = modulePath-this.root
         let moduleName='./'+path.relative(this.root,modulePath);//获取相对路径 src/index.js
         console.log(source,moduleName);
+
+        if(isEntry){
+            this.entryId = moduleName;//保存入口的名字
+        }
+        //解析需要把source源码进行改造 返回一个依赖列表
+        let {sourceCode,dependencies}=this.parse(source,path.dirname(modulePath)) // ./src
+        //把相对路径和模块中的内容 对应起来
+        this.modules[moduleName]=sourceCode
     }
     emitFile(){//发射文件
 
