@@ -1,5 +1,5 @@
 function loader(source){
-    console.log(source,'source')
+    // console.log(source,'source')
     let style=`
         let style = document.createElement('style');
         style.innerHTML = ${JSON.stringify(source)}

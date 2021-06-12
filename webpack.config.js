@@ -1,5 +1,11 @@
 const path=require('path')
-
+class p{
+    apply(compiler){
+        compiler.hooks.emit.tap('emit',function(){
+            console.log('emit')
+        })
+    }
+}
 
 module.exports={
     mode:"development",
@@ -20,5 +26,8 @@ module.exports={
                 ]
             }
         ]
-    }
+    },
+    plugins:[
+        new p()
+    ]
 }
