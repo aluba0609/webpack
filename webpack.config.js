@@ -10,17 +10,15 @@ module.exports={
         filename:'bundle.js',
         path:path.resolve(__dirname,'dist')
     },
-    // module:{
-    //     rules:[
-    //         {
-    //             test:/\.js$/,
-    //             use:{
-    //                 loader:'babel-loader',
-    //                 preset:[
-    //                     '@babel/preset.env'
-    //                 ]
-    //             }
-    //         }
-    //     ]
-    // }
+    module:{
+        rules:[
+            {
+                test:/\.less$/,
+                use:[
+                    path.resolve(__dirname,'loader','style-loader'),
+                    path.resolve(__dirname,'loader','less-loader')
+                ]
+            }
+        ]
+    }
 }
