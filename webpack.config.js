@@ -19,9 +19,16 @@ module.exports={
     module:{
         rules:[
             {
+                test:/\.jpg$/,
+                use:[
+                    path.resolve(__dirname,'loader','file-loader')
+                ]
+            },
+            {
                 test:/\.less$/,
                 use:[
                     path.resolve(__dirname,'loader','style-loader'),
+                    path.resolve(__dirname,'loader','css-loader'),
                     path.resolve(__dirname,'loader','less-loader')
                 ]
             }
