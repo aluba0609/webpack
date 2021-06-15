@@ -1,7 +1,9 @@
-let str=require('./a.js')
-import p from './aluba.jpg'
-let img=document.createElement('img');
-img.src='p'
-document.appendChild(img);
+// import p from './logo.png'
+// let img=document.createElement('img');
+// img.src=p
+// document.body.appendChild(img);
+
+
 require('./index.less')
+let str=require('./a.js')
 console.log(str)

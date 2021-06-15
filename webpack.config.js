@@ -1,3 +1,4 @@
+const { options } = require('less')
 const path=require('path')
 class p{
     apply(compiler){
@@ -19,10 +20,14 @@ module.exports={
     module:{
         rules:[
             {
-                test:/\.jpg$/,
-                use:[
-                    path.resolve(__dirname,'loader','file-loader')
-                ]
+                test:/\.png$/,
+                use:{
+                    loader:path.resolve(__dirname,'loader','url-loader'),
+                    options:{
+                        limit:1
+                    }
+                },
+                
             },
             {
                 test:/\.less$/,
