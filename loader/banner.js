@@ -1,0 +1,1 @@
+module.exports='阿鲁巴的日记'

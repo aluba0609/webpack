@@ -8,7 +8,6 @@ function loader(source){
         const base64=source.toString('base64')
         return `module.exports="data:image/${extname};base64,${base64}"`
     }else{
-        
     	return require('./file-loader').call(this,source);
     }
 }

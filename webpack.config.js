@@ -1,4 +1,3 @@
-const { options } = require('less')
 const path=require('path')
 class p{
     apply(compiler){
@@ -17,6 +16,7 @@ module.exports={
         filename:'bundle.js',
         path:path.resolve(__dirname,'dist')
     },
+    devtool:'source-map',
     module:{
         rules:[
             {
@@ -24,7 +24,7 @@ module.exports={
                 use:{
                     loader:path.resolve(__dirname,'loader','url-loader'),
                     options:{
-                        limit:1
+                        limit:10*1024
                     }
                 },
                 
@@ -36,6 +36,25 @@ module.exports={
                     path.resolve(__dirname,'loader','css-loader'),
                     path.resolve(__dirname,'loader','less-loader')
                 ]
+            },
+            {
+                test:/\.js$/,
+                use:{
+                    loader:path.resolve(__dirname,'loader','babel-loader'),
+                    options:{
+                        presets:['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test:/.\js$/,
+                use:{
+                    loader:path.resolve(__dirname,'loader','banner-loader'),
+                    options:{
+                        test:"阿鲁巴",
+                        filename:path.resolve(__dirname,'loader','banner.js')
+                    }
+                }
             }
         ]
     },
