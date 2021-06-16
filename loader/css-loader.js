@@ -12,7 +12,6 @@ function loader(source) {
     }
     arr.push(`lists.push(${JSON.stringify(source.slice(pos))})`);
     arr.push(`module.exports = lists.join('')`);
-    console.log('css-loader:',arr,'--')
     return arr.join('\r\n');
 }
 module.exports = loader;
