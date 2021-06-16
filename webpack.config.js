@@ -52,7 +52,7 @@ module.exports={
                     loader:path.resolve(__dirname,'loader','banner-loader'),
                     options:{
                         test:"阿鲁巴",
-                        filename:path.resolve(__dirname,'loader','banner.js')
+                        // filename:path.resolve(__dirname,'loader','banner.js')
                     }
                 }
             }

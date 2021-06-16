@@ -111,6 +111,7 @@ module.exports = lists.join('')
 "use strict";
 
 
+/*阿鲁巴*/
 var b = __webpack_require__(/*! ./base/b.js */ "./src/base/b.js");
 
 module.exports = 'a' + b;
@@ -127,6 +128,7 @@ module.exports = 'a' + b;
 "use strict";
 
 
+/*阿鲁巴*/
 module.exports = 'b';
 
 /***/ }),
@@ -145,6 +147,7 @@ var _logo = _interopRequireDefault(__webpack_require__(/*! ./logo.png */ "./src/
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/*阿鲁巴*/
 var img = document.createElement('img');
 img.src = _logo["default"];
 document.body.appendChild(img);
